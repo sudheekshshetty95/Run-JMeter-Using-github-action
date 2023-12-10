@@ -30,6 +30,9 @@ jobs:
         uses: QAInsights/PerfAction@v5.6.2
         with:
           test-plan-path: './jmeter.jmx'
-          # Where to store the results e.g., result.csv
-          results-file: results.jtl
           
+      - name: Upload Results
+        uses: actions/upload-artifacts@v3
+        with:
+          name: jmeter-results
+          path: result.jtl
